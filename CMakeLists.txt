@@ -15,6 +15,9 @@ if(NOT CMAKE_VERSION VERSION_LESS 3.15.0)
   cmake_policy(SET CMP0092 NEW)
 endif()
 
+# Added in order to be able to compile on Raspberry Pi 4B
+set(CMAKE_CXX_LINK_FLAGS "${CMAKE_CXX_LINK_FLAGS} -latomic")
+
 # ---[ Project and semantic versioning.
 project(Caffe2 CXX C)
 
